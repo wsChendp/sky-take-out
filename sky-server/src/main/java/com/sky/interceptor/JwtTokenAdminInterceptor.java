@@ -38,8 +38,10 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             return true;
         }
 
+//        System.out.println(jwtProperties.getAdminTokenName());
         //1、从请求头中获取令牌
         String token = request.getHeader(jwtProperties.getAdminTokenName());
+
 
         //2、校验令牌
         try {
