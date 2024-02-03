@@ -32,11 +32,11 @@ knife4j:
   setting:
     language: 'zh-CN'
 
-  #mybatis:
-  #  mapper-locations: classpath:mapper/*.xml
-  #  type-aliases-package: com.sky.entity
-  #  configuration:
-  #    map-underscore-to-camel-case: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sky.entity
+  configuration:
+    map-underscore-to-camel-case: true
 
 logging:
   level:
