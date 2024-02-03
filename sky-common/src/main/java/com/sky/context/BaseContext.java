@@ -17,3 +17,4 @@ public class BaseContext {
     }
 
 }
+//上下文就是得到此刻操作的线程
