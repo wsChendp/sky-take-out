@@ -74,13 +74,13 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      * Spring MVC扩展消息转换器
      * @param converters
      */
-    @Override
-    protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-//        创建一个消息转换器对象
-        MappingJackson2CborHttpMessageConverter converter = new MappingJackson2CborHttpMessageConverter();
-//
-        converter.setObjectMapper(new JacksonObjectMapper());
-//      前面是索引，将自己的消息转换器添加到容器里
-        converters.add(0,converter);
-    }
+//    @Override
+//    protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+////        创建一个消息转换器对象
+//        MappingJackson2CborHttpMessageConverter converter = new MappingJackson2CborHttpMessageConverter();
+////
+//        converter.setObjectMapper(new JacksonObjectMapper());
+////      前面是索引，将自己的消息转换器添加到容器里
+//        converters.add(0,converter);
+//    }
 }

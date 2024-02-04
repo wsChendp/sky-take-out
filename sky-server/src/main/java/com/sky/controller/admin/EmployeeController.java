@@ -11,6 +11,7 @@ import com.sky.result.Result;
 import com.sky.service.EmployeeService;
 import com.sky.utils.JwtUtil;
 import com.sky.vo.EmployeeLoginVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Insert;
@@ -88,4 +89,27 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
+//    路径参数加PathVariable,
+    @PostMapping("/status/{status}")
+    @ApiOperation("启用禁用员工账号")
+    public Result startOrStop(@PathVariable Integer status, Long id){
+        log.info("启用禁用员工账号:{},{}",status,id);
+        employeeService.startOrStop(status,id);
+        return Result.success();
+    }
+
+
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id){
+        Employee employee = employeeService.getById(id);
+        log.info("查询员工id = " + id );
+        return Result.success(employee);
+    }
+    @PutMapping
+    @ApiOperation("编辑员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO){
+        employeeService.update(employeeDTO);
+        return Result.success(employeeDTO);
+    }
 }
